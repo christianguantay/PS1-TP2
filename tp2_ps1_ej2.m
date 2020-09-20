@@ -63,4 +63,13 @@ for k = 1:length(M)
 end
 Js = s' * s;
 Js = Js/length(s);
- 
+
+
+audiowrite('pista_01_noiseTP2.wav',x,fs);
+
+audiowrite('pista_01_cleanedTP2M1.wav',e{1},fs);
+audiowrite('pista_01_cleanedTP2M2.wav',e{2},fs);
+audiowrite('pista_01_cleanedTP2M3.wav',e{3},fs);
+audiowrite('pista_01_cleanedTP2M4.wav',e{4},fs);
+audiowrite('pista_01_cleanedTP2M5.wav',e{5},fs);
+audiowrite('pista_01_cleanedTP2M6.wav',e{6},fs);
