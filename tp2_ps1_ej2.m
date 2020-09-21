@@ -1,9 +1,12 @@
 clear all;
 close all;
 
-digits(128);
+blue = [0, 0.4470, 0.7410];
+orange = [0.8500, 0.3250, 0.0980];
+
+
 [s,fs]=audioread('pista_01.wav');
-R = sqrt(0.1);
+
 
 v = wgn(1,length(s), -10);
 
@@ -64,7 +67,16 @@ end
 Js = s' * s;
 Js = Js/length(s);
 
+%% Graficos
+figure(4);
+scatter(M,Jmin,'filled');
+grid on
+xlim([0 6])
+title('Potencia de error')
+xlabel('Cantidad de muestras')
+ylabel('Magnitud')
 
+%% Audios
 audiowrite('pista_01_noiseTP2.wav',x,fs);
 
 audiowrite('pista_01_cleanedTP2M1.wav',e{1},fs);
